@@ -1,0 +1,45 @@
+
+	{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  OnlineFIR - Home
+{% endblock title%}
+
+{% block body %}
+		<div class="content">
+
+				<div class="new-arrivals-w3agile">
+					<div class="container">
+						<h2 class="tittle">Missing Person</h2>
+						<div class="arrivals-grids">
+							{% for item in context %}
+                            <div class="col-md-3 arrival-grid simpleCart_shelfItem">
+								<div class="grid-arr">
+									<div  class="grid-arrival">
+										<figure>
+
+												<div class="grid-img">
+													<a href="{% url 'person_detail' item.pk %}">
+                                                      <img class='img-responsive' alt='' src="/media/{{ item.image }}"style='height:291px;width:255px;'>
+
+											</a>
+												</div>
+										</figure>
+									</div>
+                        					<div class="women">
+										<h6><a href="{% url 'person_detail' item.pk %}"> Name: {{item.full_name}}</a></h6>
+										<span class="size">City:{{item.city}} </span>
+										<p ><em class="item_price">Mobile No:{{item.mobile_no}}</em></p>
+										<a href="{% url 'person_detail' item.pk %}" data-text="Add To Cart" class="my-cart-b item_add">More Info</a>
+									</div>
+								</div>
+							</div>
+							{% endfor %}
+
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+	{% endblock body%}

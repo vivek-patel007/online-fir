@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+	{% load static %}
+{% block title %}
+  OnlineFIR - criminal info
+{% endblock title%}
+
+{% block body %}
+<div class="content">
+			<!--single--><p class="price item_price" style="margin-left:500px;">Criminal Information</p>
+			<div class="single-wl3">
+				<div class="container">
+					<div class="single-grids">
+						<div class="col-md-9 single-grid">
+							<div clas="single-top">
+								<div class="single-left">
+									<div class="flexslider">
+										<ul class="slides">
+
+												<!--<div class="thumb-image"> <img src="images/si.jpg" data-imagezoom="true" class="img-responsive"> </div>
+                                                -->
+
+
+                                       <div class="thumb-image"> <img data-imagezoom='true' class='img-responsive' src='/media/{{criminal.image}}' style='height:300px;width:200px;'>
+
+
+											</li>
+											<!--<li data-thumb="images/si1.jpg">
+												 <div class="thumb-image"> <img src="images/si1.jpg" data-imagezoom="true" class="img-responsive"> </div>
+											</li>
+											<li data-thumb="images/si2.jpg">
+											   <div class="thumb-image"> <img src="images/si2.jpg" data-imagezoom="true" class="img-responsive"> </div>
+											</li> -->
+										 </ul>
+									</div>
+								</div>
+								<div class="single-right simpleCart_shelfItem">
+									<h4>Full Name: {{criminal.name}}</h4>
+
+									<p class="price item_price">city Name: {{criminal.city}}</p>
+
+                                    <p class="price item_price">gender :{{criminal.gender}}</p>
+                                    <p class="price item_price">contact no:{{criminal.contact_no}}</p>
+									<p><span>Address : </span> {{criminal.address}}</p>
+									<p><span>email id : </span> {{criminal.email}}</p>
+									<p><span>Date of birth : </span> {{criminal.dob}}</p>
+									<div class="description">
+										<p><span>Description : </span> {{criminal.description}}</p>
+                              <br>
+
+
+									</div>
+
+
+									</div>
+									<div class="women">
+										<span class="size"> </span>
+
+
+
+                                        <a href="/"   onclick="alert('you will be redirected to home page')"; class="my-cart-b item_add">Back to Home page</a>
+
+
+									</div>
+<!--									<div class="social-icon">-->
+<!--										<a href="https://www.facebook.com/" target="_blank"><i class="icon"></i></a>-->
+<!--										<a href="https://twitter.com/" target="_blank"><i class="icon1" ></i></a>-->
+<!--										<a href="https://mail.google.com" target="_blank"><i class="icon2" ></i></a>-->
+<!--										<a href="https://www.linkedin.com" target="_blank" ><i class="icon3"></i></a>-->
+<!--									</div>-->
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+						</div></div></div></div>
+        {% endblock body%}
+

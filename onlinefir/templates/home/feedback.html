@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+	{% load static %}
+{% block title %}
+  OnlineFIR - Feedback
+{% endblock title%}
+
+{% block body %}
+		<div class="content">
+				<!--login-->
+			<div class="login">
+		<div class="main-agileits">
+				<div class="form-w3agile form1">
+					<h3>Feedback</h3>
+					<form name="form1"  method="post" action="{% url 'feedback_view' %}" enctype="multipart/form-data">
+
+							{% csrf_token %}
+
+						<div class="key">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+							<input  type="text"  name="email_id"  required value="{{ request.user.email }}" readonly="readonly">
+							<div class="clearfix"></div>
+						</div>
+
+
+
+
+
+
+						<div class="key">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+							<input  type="text" placeholder="Message" name="message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}" maxlegth="200" required>
+
+
+
+
+
+
+
+
+							<input  type="hidden" value="Thank you for your valuable feedback!we will get back to you soon!" name="msg" id="msg">
+
+
+
+
+<div class="clearfix"></div>
+						</div>
+
+						<input type="submit" value="Submit" name="submit20" id="submit20" onclick="sendMessage()">
+                        		</form>
+				</div>
+
+			</div>
+		</div>
+				<!--login-->
+		</div>
+        {% endblock body%}

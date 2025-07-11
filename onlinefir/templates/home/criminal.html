@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  OnlineFIR - Crime Info
+{% endblock title%}
+
+{% block body %}
+<div class="content">
+
+				<div class="new-arrivals-w3agile">
+					<div class="container">
+						<h2 class="tittle">Wanted Information</h2>
+						<div class="arrivals-grids">
+        	<div class="col-md-3 arrival-grid simpleCart_shelfItem">
+								<div class="grid-arr">
+									<div  class="grid-arrival">
+										<figure>
+											<a class="new-gri" href="criminalinfo.php?criminal_id=
+
+
+												<div class="grid-img">
+
+                                                      <img class='img-responsive' alt='' src='./admincrimereporting/criminalimage/$row[8]'style='height:291px;width:255px;'>
+
+												</div>
+											</a>
+										</figure>
+									</div>
+<div class="women">
+										<h6><a href="criminalinfo.php?criminal_id=criminal_id'];?>"> Name:<?php echo $row['name']?></a></h6>
+										<span class="size">City Name:<?php echo $row['city_name']?> </span>
+										<p ><em class="item_price">Gender:<?php echo $row['gender']?></em></p>
+										<a href="criminalinfo.php?criminal_id=<?php echo $row['criminal_id'];?>" data-text="Add To Cart" class="my-cart-b item_add">More Info</a>
+									</div>
+								</div>
+								</div>
+								</div>
+								</div>
+								</div>
+                            {% endblock body%}

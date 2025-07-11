@@ -1,0 +1,79 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %}
+    OnlineFIR - Sign Up
+{% endblock title%}
+{% block body %}
+<div class="container">
+<form  method="post" ation="{% url 'signuppage' %}">
+              {% csrf_token %}
+     <input type="hidden" name="user_type" value="users">
+
+<input type="submit" value="user"  name="type"  required>
+</form>
+</div>
+
+<style>
+ input[type="submit"] {
+
+	 margin-left: 1%;
+    outline: none;
+    padding: 0.8em 0;
+    width: 38%;
+    text-align: center;
+    font-size: 1em;
+    margin-top: 1em;
+    border: none;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    cursor: pointer;
+    background:#0064d2;
+    box-shadow: 0px 2px 1px rgba(28, 28, 29, 0.42);
+}
+.signin-form input[type="submit"]:hover {
+    color: #fff;
+       background:#000;
+    transition: .5s all;
+	-webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    -o-transition: .5s all;
+    -ms-transition: .5s all;
+}
+</style>
+<div class="container">
+
+<form  method="post" action="{% url 'signuppage' %}">
+              {% csrf_token %}
+     <input type="hidden" id="custId" name="user_type" value="police">
+
+<input type="submit" value="police station" name="type" id="new" style="margin-left:4px;width:535px;" required>
+</form>
+</div>
+    <style>
+#new {
+    outline: none;
+    padding: 0.8em 0;
+    width: 94%;
+    text-align: center;
+    font-size: 1em;
+    margin-top: 1em;
+	margin-left:17px;
+    border: none;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    cursor: pointer;
+    background:black;
+    box-shadow: 0px 2px 1px rgba(28, 28, 29, 0.42);
+}
+#new:hover {
+    color: #fff;
+       background:#0064d2;
+    transition: .5s all;
+	-webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    -o-transition: .5s all;
+    -ms-transition: .5s all;
+}
+</style>
+
+
+	{% endblock body%}

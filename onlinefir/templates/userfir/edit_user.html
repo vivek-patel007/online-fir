@@ -1,0 +1,105 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %}
+OnlineFIR - Sign Up-User
+{% endblock title%}
+{% block body %}
+
+
+<div class="content">
+    <!--login-->
+    <div class="login">
+        <div class="main-agileits">
+            <div class="form-w3agile form1">
+                <h3>Register</h3>
+                <form method="post" action="{% url 'edit_profile' %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+
+                    <label name="first name">First name</label>
+                    <div class="key">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <input type="text" placeholder="First Name(Input only alphabets)" name="first_name"
+                               onKeyPress="return onlyAlphabets(event,this);" value="{{user.first_name}}" required="">
+                        <div class="clearfix"></div>
+                    </div>
+
+
+                    <label name="Last name">Last Name</label>
+                    <div class="key">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <input type="text" name="last_name" placeholder="Last Name(Input only alphabets)"
+                               onKeyPress="return onlyAlphabets(event,this);" value="{{user.last_name}}" required="">
+                        <div class="clearfix"></div>
+                    </div>
+
+
+                    <label name="city">Gender</label>
+                    <br/>
+
+                    <select name="gender" id="gender" style="width: 100%;
+   height:40px;">
+                        <option value="MALE">MALE</option>
+                        <option value="FEMALE">FEMALE</option>
+                        <option value="OTHER">OTHER</option>
+
+                    </select>
+                    <div class="clearfix"></div>
+                    <!--						</div>-->
+
+                    <br/>
+
+                    <label name="dob">Date Of Birth</label>
+                    <div class="key">
+
+                        <input type="date" style="width:100%;" value="{{user.dob}}" name="dob" onfocus="this.value = '';"
+                            required="">
+                        <div class="clearfix"></div>
+                    </div>
+
+
+                    <label name="city">city name</label>
+                    <br/>
+
+                    <select name="city_id" id="city_id" style="width: 100%;
+   height:40px;">
+                        <option value="Rajkot">Rajkot</option>
+                        <option value="Ahmedabad">Ahmedabad</option>
+                        <option value="Visnagar">Visnagar</option>
+
+                    </select>
+                    <div class="clearfix"></div>
+            </div>
+
+
+            <br/>
+
+
+            <label name="Address">Address</label>
+            <div class="key">
+                <i class="fa fa-spinner" aria-hidden="true"></i>
+                <input type="text" value="{{user.address}}" name="address" onfocus="this.value = '';"
+                       onblur="if (this.value == '') {this.value = 'Email';}" required="">
+                <div class="clearfix"></div>
+            </div>
+            <script type="text/javascript">
+        var specialKeys = new Array();
+        specialKeys.push(8); //Backspace
+        function IsNumeric(e) {
+            var keyCode = e.which ? e.which : e.keyCode
+        var ret = ((keyCode >= 48 && keyCode <= 57) || specialKeys.indexOf(keyCode) != -1);
+            document.getElementById("error").style.display = ret ? "none" : "inline";
+            return ret;
+        }
+
+            </script>
+            <span id="error" class="ss-icon" style="color: Red; display: none"></span>
+            <input type="submit" name="submitnew" value="Edit Profile">
+<!--            <input type="submit" name="submitnew" value="Submit">-->
+            </form>
+        </div>
+
+    </div>
+</div>
+<!--login-->
+</div>
+{% endblock body%}

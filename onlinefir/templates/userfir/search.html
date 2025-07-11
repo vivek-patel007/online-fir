@@ -1,0 +1,52 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %}
+  OnlineFIR - Search
+{% endblock title%}
+
+{% block body %}
+	<div class="content">
+
+				<div class="new-arrivals-w3agile">
+					<div class="container">
+						<h2 class="tittle">Criminal Information</h2>
+						<div class="arrivals-grids">
+							{% if data %}
+							{% for item in data %}
+                        <div class="col-md-3 arrival-grid simpleCart_shelfItem">
+								<div class="grid-arr">
+									<div  class="grid-arrival">
+										<figure>
+											<a class="new-gri" href="{% url 'criminal_detail' item.pk %}">
+?>">
+												<div class="grid-img">
+
+                                                    <img class='img-responsive' alt='' src='/media/{{item.image}}'style='height:291px;width:255px;'>
+
+												</div>
+												<div class="grid-img">
+
+                                                      <img class='img-responsive' alt='' src='/media/{{item.image}}'style='height:291px;width:255px;'>
+
+												</div>
+											</a>
+										</figure>
+									</div>
+
+
+									<div class="women">
+										<h6><a href="{% url 'criminal_detail' item.pk %}"> Name:{{item.name}}</a></h6>
+										<span class="size">City:{{item.city}} </span>
+										<p ><em class="item_price">Gender: {{item.gender}}</em></p>
+										<a href="{% url 'criminal_detail' item.pk %}" data-text="Add To Cart" class="my-cart-b item_add">More Info</a>
+									</div>
+								</div>
+							</div>
+								</div>
+						{% endfor %}
+{% endif %}
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+	{% endblock body%}

@@ -1,0 +1,90 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %}
+  OnlineFIR - Create FIR
+{% endblock title%}
+
+{% block body %}
+	<div class="content">
+				<!--login-->
+			<div class="login">
+		<div class="main-agileits">
+				<div class="form-w3agile form1">
+					<h3>Edit Profile</h3>
+					<form  method="post" action="{% url 'edit_profile_police' %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+
+						<script language="Javascript" type="text/javascript">
+
+        function onlyAlphabets(e, t) {
+            try {
+                if (window.event) {
+                    var charCode = window.event.keyCode;
+                }
+                else if (e) {
+                    var charCode = e.which;
+                }
+                else { return true; }
+                if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123))
+                    return true;
+                else
+                    return false;
+
+            }
+            catch (err) {
+                alert(err.Description);
+
+            }
+        }
+
+    </script>
+
+						<label name="first name">Division</label>
+						<div class="key">
+							<i class="fa fa-user" aria-hidden="true"></i>
+							<input  type="text"  name="division" onKeyPress="return onlyAlphabets(event,this);"  required="" value="{{user.division}}">
+							<div class="clearfix"></div>
+						</div>
+
+
+						<label name="Middle name">address</label>
+						<div class="key">
+							<i class="fa fa-user" aria-hidden="true"></i>
+							<input  type="text"  name="address"  value="{{user.address}}"  required="">
+							<div class="clearfix"></div>
+						</div>
+
+						<label name="Last name">contact_no</label>
+						<div class="key">
+							<i class="fa fa-user" aria-hidden="true"></i>
+							<input  type="text"  name="contact_no" value="{{user.contact_no}}"  required="">
+							<div class="clearfix"></div>
+						</div>
+
+
+
+
+
+
+
+						<label name="dob">website</label>
+						<div class="key">
+
+							<input  type="text" style="width:100%;" value="{{user.website}}" name="website" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+							<div class="clearfix"></div>
+						</div>
+
+
+
+
+
+
+						<input type="submit" name="submitnew" value="Edit Profile">
+					</form>
+				</div>
+
+			</div>
+		</div>
+				<!--login-->
+		</div>
+	{% endblock body%}

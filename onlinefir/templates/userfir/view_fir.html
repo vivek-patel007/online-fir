@@ -1,0 +1,75 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %}
+  OnlineFIR - view fir
+{% endblock title%}
+
+{% block body %}
+<h3 class="blank1">Manage Fir</h3>
+
+	   <div class="table-responsive">
+						  <table class="table table-bordered">
+							<thead>
+							  <tr>
+
+
+
+
+								<th> Fir id </th>
+								<th> Email</th>
+								<th>Police Station Name</th>
+								<th>User Proof</th>
+								<th>Complaint Type</th>
+								<th>Against Whom</th>
+								<th>Date and Time</th>
+
+								<th>Approve</th>
+
+
+							  </tr>
+							</thead>
+							<tbody>
+							  <tr>
+{% for fr in fir %}
+							  {% if fr.status == False %}
+       <tr>
+	   <td>{{fr.pk}}</td>
+	    <td>{{fr.user.email}}</td>
+
+
+
+		 <td>{{fr.police_station}}</td>
+         <td><img src="/media/{{fr.user_proof}}" style="height:50px;width:50px;"></td>
+		  <td>{{fr.complaint_type}}</td>
+		  <td>{{fr.against_whom}}</td>
+		  <td>{{fr.timestamp}}</td>
+
+
+       <td><a href="{% url 'approve_fir' fr.pk %}">
+       <img src="{% static 'images/tick.jpg' %}"></a>
+       </td>
+
+
+       </td>
+       </tr>
+							  {%endif%}
+							  {%endfor%}
+
+
+							  </tr>
+
+							</tbody>
+						  </table>
+						</div><!-- /.table-responsive -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	{% endblock body%}
+
+
+
+
+
+

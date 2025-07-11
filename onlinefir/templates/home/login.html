@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %}
+  OnlineFIR - LogIn
+{% endblock title%}
+
+{% block body %}
+{% load widget_tweaks %}
+<div class="content">
+				<!--login-->
+			<div class="login">
+				<div class="main-agileits">
+					<div class="form-w3agile">
+						<h3>Login </h3>
+								</span>
+
+						{% if form.non_field_errors %}
+						<ul>
+						{% for error in form.non_field_errors %}
+
+						<li><strong class="text-danger"><p class="text-danger">{{ error }}</p></strong></li>
+
+						{% endfor %}
+					</ul>
+				  {% endif %}
+						<form  method="post">
+							{% csrf_token %}
+							<div class="key">
+								<i class="fa fa-envelope" aria-hidden="true"></i>
+								 {{form.username|append_attr:"placeholder:Username" }}
+<!--								<input  type="text" value="Email" name="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">-->
+								<div class="clearfix"></div>
+							</div>
+							<div class="key">
+								<i class="fa fa-lock" aria-hidden="true"></i>
+								{{form.password|append_attr:"placeholder:Password" }}
+<!--								<input  type="password" value="Password" name="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">-->
+								<div class="clearfix"></div>
+							</div>
+							<input type="submit" name="login" value="Login">
+						</form>
+					</div>
+					<div class="forg">
+						<a href="{% url 'forget_password' %}" class="forg-left">Forgot Password</a>
+						<a href="{% url 'signuppage' %}" class="forg-right">Register</a>
+					<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+				<!--login-->
+    	{% endblock body%}

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+	{% load static %}
+{% block title %}
+  OnlineFIR - criminal
+{% endblock title%}
+
+{% block body %}
+<div class="content">
+
+				<div class="new-arrivals-w3agile">
+					<div class="container">
+						<h2 class="tittle">Wanted Information</h2>
+						<div class="arrivals-grids">
+
+
+							{% for cri in criminal %}
+							<div class="col-md-3 arrival-grid simpleCart_shelfItem">
+								<div class="grid-arr">
+									<div  class="grid-arrival">
+										<figure>
+											<a class="new-gri" href="{% url 'criminal_detail' cri.pk %}">
+
+
+										<div class="grid-img">
+
+
+												<div class="grid-img">
+
+                                                      <img class='img-responsive' alt='' src='/media/{{cri.image}}'style='height:291px;width:255px;'>
+
+												</div>
+											</a>
+										</figure>
+									</div>
+
+
+									<div class="women">
+										<h6><a href="{% url 'criminal_detail' cri.pk %}"> Name:{{cri.name}}</a></h6>
+										<span class="size">City Name:{{cri.city}} </span>
+										<p ><em class="item_price">Gender:{{cri.gender}}</em></p>
+										<a href="{% url 'criminal_detail' cri.pk %}" data-text="Add To Cart" class="my-cart-b item_add">More Info</a>
+									</div>
+								</div>
+							</div>
+
+
+								</div>
+						{% endfor %}
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+        {% endblock body%}
